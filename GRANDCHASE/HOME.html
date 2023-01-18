@@ -4,11 +4,223 @@
     <title>GCDC-Home</title>
     <meta name="viewport" content="width=initial-width, initial-scale=1">
     <link rel="icon"   type="image/x-icon" href="C:\Users\Vince\CALOY\GRANDCHASE\favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+        * 
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+        .menu-container
+        {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            border-radius: 70%;
+
+        }
+        .menu-toggle{
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            z-index: 50;
+            cursor: pointer;
+            font-size: 50px;
+            transition: transform 1.5s;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid orangered;
+            box-shadow: 2px 2px 2px 2px orange,
+            -2px 2px 2px 1px red,
+            inset 2px 2px 2px 2px orange,
+            inset -2px 2px 2px 1px red;
+            background-color: black;
+        }
+        .menu-container li a
+        {
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid orangered;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            text-decoration: none !important;
+            box-shadow: 1px 1px 2px 2px orange,
+            -2px 2px 2px 1px red,
+            inset 1px 1px 2px 2px orange,
+            inset -2px 2px 2px 1px red;
+        }
+        
+        .menu-container li {
+            list-style: none;
+            position: absolute;
+            transform-origin: 200px;
+            transition: 0.8s;
+            left: 0;
+            transition-delay: calc(0.1s*var(--i));
+            transform: rotate(0deg) translateX(170px);
+
+        }
+        .menu-container.active .menu-toggle{
+            transform: rotate(360deg);
+            transition: .5s;
+            background-color:orangered;
+            z-index: 0;
+            transform: scale(1.2);
+            box-shadow:0 0 50px orangered,
+            0 0 100px orangered,
+            0 0 150px orangered,
+            0 0 200px orangered,
+            0 0 250px orangered,
+            0 0 300px orangered
+            ;
+            width: 300px;
+            height: 300px;
+        }
+        .menu-container.deactive .menu-toggle{
+            background-color: black;
+            width: 180px;
+            height: 180px;
+            transition: 1s;
+            
+            
+        }
+        .menu-container.active li{
+            transform: rotate(calc(360deg / 3*var(--i) ));
+        }
+        .menu-container.active li:nth-of-type(2) a i
+        {
+            transform: rotate(-120deg);
+        }
+        .menu-container.active li:nth-of-type(3) a i
+        {
+            transform: rotate(-236deg);
+        }
+        a.hover1 i{
+            text-shadow: 0 0 10px purple,
+            0 0 20px purple,
+            0 0 30px purple,
+            0 0 40px purple,
+            0 0 50px purple
+            ;
+        }
+        a.hover2 i{
+            text-shadow: 0 0 10px blue,
+            0 0 20px blue,
+            0 0 30px blue,
+            0 0 40px blue,
+            0 0 50px blue
+            ;
+        }
+        a.hover3 i{
+            text-shadow: 0 0 10px yellow,
+            0 0 20px yellow,
+            0 0 30px yellow,
+            0 0 40px yellow,
+            0 0 50px yellow
+            ;
+        }
+        .BACKVID
+        {
+            position: fixed;
+            object-fit: cover;
+            height:100%;
+            width: 100%;
+            z-index: -1;
+        }
+        @keyframes side{
+            0%{right: 0px; bottom: 0px;}
+            100%{left: 50%; top:50%}
+        }
+        img{
+            z-index: 51;
+        }
     </style>
 </head>
-
-
-
-
+<body>
+    <video autoplay loop muted class="BACKVID">
+        <source src="C:\Users\Vince\CALOY\GRANDCHASE\Grand Chase MMO - New Anime Trailer.mp4" type="video/mp4">
+    </video>
+<div class="menu-container">
+    
+    <div class="menu-toggle">
+        <img src="C:\Users\Vince\CALOY\GRANDCHASE\FAVICON_GC-removebg-preview copy.png" alt="GC logo" width="170px" height="150px">
+    </div>
+    <li style="--i:0" index="1">
+        <a href="Characters"><i class="fa-solid fa-user-group"></i></a>
+    </li>
+    <li style="--i:1" index="2">
+        <a href="WorldBoss"><i class="fa-solid fa-dragon"></i></a>
+    </li>
+    <li style="--i:2" index="3">
+        <a href="PVP"><i class="fa-solid fa-trophy"></i></a>
+    </li>
+</div>
+<div>
+<audio control autoplay>
+    <source  src="C:\Users\Vince\CALOY\GRANDCHASE\Eunha _Hope - Grand chase (Ost)_.mp3" type="audio/mpeg">
+    Your Browser does not support audio element
+</audio>
+</div>
+</body>
 </html>
+
+
+<script>
+    $(document).ready(function(){
+        var menuExpanded = false;
+        $(".menu-toggle").click(function(){
+            if(!menuExpanded){
+                $(".menu-container").addClass("active");
+                $(".menu-container").removeClass("deactive")
+            }
+            else
+            {
+                $(".menu-container").removeClass("active");
+                $(".menu-container").addClass("deactive")
+            }
+            menuExpanded = !menuExpanded;
+        }) 
+        $(".menu-container li").hover(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').addClass("hover"+index);
+        });
+        $(".menu-container li").mouseleave(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').removeClass("hover"+index);
+        });
+        $(".menu-toggle").hover(function(){
+            $(".menu-container li").each(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').addClass("hover"+index);
+             });
+        });
+        $(".menu-toggle").mouseleave(function(){
+            $(".menu-container li").each(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').removeClass("hover"+index);
+              });
+        });
+    })
+</script>

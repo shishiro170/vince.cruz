@@ -7,73 +7,104 @@
     <title>GCDC</title> 
     <link rel="icon"   type="image/x-icon" href="C:\Users\Vince\CALOY\GRANDCHASE\favicon.ico">
     <style>
-        * {
+        * 
+        {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        .BACKVID{
+        .container
+        {
+            min-height: 100px;
+            max-width: 1000px;
+            display: block;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .BACKVID
+        {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            top: 0;
             object-fit: cover;
             height:100vh;
             width: 100vw;
             z-index: -1;
         }
-        .LOGO{
+        body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        .logo
+        {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
-            margin-bottom: auto;
-            min-height: 100%;
-            min-width: 70%;
-            align-items: center;
-            justify-content: center;
-            padding-top: 5%;
+            width: 500px;
+           margin-left: auto;
+           margin-right: auto;
 
         }
-        .LOGO:hover {
+        a{
+            position: relative;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;   
-        }
-        .BEHIND{
-            font-size: 1300px;
-            width: 50%;
-            height: 50%;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 60px;
+            background: none;
+            border-radius: 50%;
+            font-size: 30px;
+            color: black;
+            transition: .5s;
             align-items: center;
-            justify-content: center;
+
+
         }
-        .BEHIND:hover{
-            text-shadow:orangered
+        a:before{
+            content: '';
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            width: 30%;
+            height: 30%;
+            border-radius: 100%;
+            background: none;
+            transition: .5s;
+            transform: scale(.9);
+            z-index: -1;
+        }
+        a:hover:before{
+            transform: scale(1.2);
+            box-shadow:0 0 50px orangered,
+            0 0 100px orangered,
+            0 0 150px orangered,
+            0 0 200px orangered,
+            0 0 250px orangered,
+            0 0 300px orangered
             ;
+            filter: blur(3px);
+            background: orangered;
         }
-        body {
-            
-            margin: 0;
-            font-family: Arial;
-            font-size: 17px;
+        a img:hover{
+            width: 70%;
+            bottom: 50%;
+            transition: .5s;
         }
-       
+        a img::after{
+            zoom: 100%;
+        }
     </style>
 </head>
 <body>
-    <div>
-    <video autoplay muted loop class="BACKVID">
+   
+    <div class="container"> 
+        <video autoplay muted loop class="BACKVID">
         <source src="C:\Users\Vince\CALOY\GRANDCHASE\Y2Mate.is - GrandChase-Dimensional Chaser Trailer-9811DglJdSY-720p-1654667730463.mp4" type="video/mp4">
         BROWSER does not support HTML5 video
-    </video>
-    <div>
-        <input type="hidden" style="font-size:xx-large;text-shadow: tomato;" >111111</input>
-       <a href="C:\Users\Vince\CALOY\GRANDCHASE\HOME"> 
-        <img src="C:\Users\Vince\CALOY\GRANDCHASE\GCLOGO-removebg-preview.png" class="LOGO">
-        </a> 
-    </div>
-</div>
+        </video>
+    </div> 
+     <a href="C:\Users\Vince\CALOY\GRANDCHASE\HOME.html" >
+        <img src="C:\Users\Vince\CALOY\GRANDCHASE\GCLOGO-removebg-preview.png" alt="hehe">
+    </a>
 </body>
 </html>
