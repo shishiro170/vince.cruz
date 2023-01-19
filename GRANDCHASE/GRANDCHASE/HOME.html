@@ -1,0 +1,104 @@
+<!DOCtype html>
+<html>
+<head>
+    <title>GCDC-Home</title>
+    <meta name="viewport" content="width=initial-width, initial-scale=1">
+    <link rel="icon"   type="image/x-icon" href="C:\Users\Vince\CALOY\GRANDCHASE\favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="HOME.css">
+</head>
+<body>
+   
+    <video autoplay loop muted class="BACKVID">
+        <source src="C:\Users\Vince\CALOY\GRANDCHASE\Grand Chase MMO - New Anime Trailer.mp4" type="video/mp4">
+    </video>
+    <nav>
+<div class="menu-container">
+    <div class="menu-toggle">
+        <img src="C:\Users\Vince\CALOY\GRANDCHASE\FAVICON_GC-removebg-preview copy.png" alt="GC logo" width="80px" height="70px" class="img">
+    </div>
+    <span style="--i:0" index="1">
+        <a id="btn"><i class="fa-solid fa-user-group"></i></a>
+    </span>
+    <span style="--i:1" index="2">
+        <a><i class="fa-solid fa-dragon"></i></a>
+    </span>
+    <span style="--i:2" index="3">
+        <a><i class="fa-solid fa-trophy"></i></a>
+    </span>
+</div>
+<div>
+<audio control autoplay>
+    <source  src="C:\Users\Vince\CALOY\GRANDCHASE\Eunha _Hope - Grand chase (Ost)_.mp3" type="audio/mpeg">
+    Your Browser does not support audio element
+</audio>
+    
+</div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span>
+                <img src="C:\Users\Vince\CALOY\GRANDCHASE\MAGE ICON.png" alt="MAGE">
+            </span>
+            <span>
+                <img src="C:\Users\Vince\CALOY\GRANDCHASE\MAGE ICON.png" alt="MAGE">
+            </span>
+            <span>
+                <img src="C:\Users\Vince\CALOY\GRANDCHASE\MAGE ICON.png" alt="MAGE">
+            </span>
+            <span>
+                <img src="C:\Users\Vince\CALOY\GRANDCHASE\MAGE ICON.png" alt="MAGE">
+            </span>
+            <span>
+                <img src="C:\Users\Vince\CALOY\GRANDCHASE\MAGE ICON.png" alt="MAGE">
+            </span>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
+
+
+<script>
+    $(document).ready(function(){
+        var menuExpanded = false;
+        $(".menu-toggle").click(function(){
+            if(!menuExpanded){  
+                $("nav").addClass("active");
+                $("nav").removeClass("deactive");
+                $(".menu-container").addClass("active");
+                $(".menu-container").removeClass("deactive");
+                $("image").addClass("active");
+            }
+            else
+            { 
+                $("nav").removeClass("active");
+                $("nav").addClass("deactive");
+                $(".menu-container").removeClass("active");
+                $(".menu-container").addClass("deactive");
+               
+                $("image").removeClass("active");
+            }
+            menuExpanded = !menuExpanded;
+        }) 
+        $(".menu-container span").hover(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').addClass("hover"+index);
+        });
+        $(".menu-container span").mouseleave(function(){
+            var index =$(this).attr("index");
+            $(this).find('a').removeClass("hover"+index);
+        });
+         
+    })
+    var modal = document.getElementById("modal");
+    var btn = document.getElementById("btn");
+   
+    btn.onclick=function(){
+        modal.style.display ="block";
+    }
+    span.onclick=function(){
+        modal.style.display ="none";
+    }
+    </script>

@@ -1,0 +1,223 @@
+* 
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: black;  
+    align-content: center;
+    justify-content: center;
+}
+nav{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1;
+}
+.menu-container
+{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 70%;
+
+}
+.menu-toggle{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 50;
+    cursor: pointer;
+    font-size: 50px;
+    transition: transform 1.5s;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orangered;
+    box-shadow: 2px 2px 2px 2px orange,
+    -2px 2px 2px 1px red,
+    inset 2px 2px 2px 2px orange,
+    inset -2px 2px 2px 1px red;
+    background-color: black;
+}
+.menu-container span a
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid orangered;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none !important;
+    box-shadow: 1px 1px 2px 2px orange,
+    -2px 2px 2px 1px red,
+    inset 1px 1px 2px 2px orange,
+    inset -2px 2px 2px 1px red;
+}
+
+.menu-container span{
+    list-style: none;
+    position: absolute;
+    transform-origin: 200px;
+    transition: 0.8s;
+    right: 120%;
+    transition-delay: calc(0.1s*var(--i));
+    transform: rotate(0deg) translateX(170px);
+
+}
+.menu-container.active .menu-toggle{
+    transform: rotate(360deg);
+    transition: .5s;
+    background-color:rgba(255, 69, 0, 0.5);
+    z-index: 0;
+    transform: scale(1.4);
+    box-shadow:0 0 50px rgba(255, 69, 0, 0.5),
+    0 0 100px rgba(255, 69, 0, 0.5),
+    0 0 150px rgba(255, 69, 0, 0.5),
+    0 0 200px rgba(255, 69, 0, 0.5),
+    0 0 250px rgba(255, 69, 0, 0.5),
+    0 0 300px rgba(255, 69, 0, 0.5)
+    ;
+    border: none;
+    
+    
+}
+nav.active{
+    top: 30%;
+    right: 43%;
+    animation-name: zooming;
+    animation-duration: 2s;
+    
+}     
+nav.deactive{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    
+    animation-name: zooming;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    
+}
+.menu-container.deactive .menu-toggle{
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+.menu-container.active img{
+    transform: scale(2);
+}
+
+.menu-container.active span{
+    transform: rotate(calc(360deg / 3*var(--i) ));
+    
+}
+.menu-container.active span:nth-of-type(1) a 
+{
+   transform: scale(1.5);
+}
+.menu-container.active span:nth-of-type(2) a 
+{
+   transform: scale(1.5);
+}
+.menu-container.active span:nth-of-type(3) a 
+{
+   transform: scale(1.5);
+}
+.menu-container.active span:nth-of-type(1) a:hover 
+{
+   transform: scale(2);
+}
+.menu-container.active span:nth-of-type(2) a:hover 
+{
+   transform: scale(2);
+}
+.menu-container.active span:nth-of-type(3) a:hover 
+{
+   transform: scale(2);
+}
+.menu-container.active span:nth-of-type(2) a i
+{
+    transform: rotate(-120deg);
+}
+.menu-container.active span:nth-of-type(3) a i
+{
+    transform: rotate(-239deg);
+}
+a.hover1 i{
+    text-shadow: 0 0 10px purple,
+    0 0 20px purple,
+    0 0 30px purple,
+    0 0 40px purple,
+    0 0 50px purple
+    ;
+}
+a.hover2 i{
+    text-shadow: 0 0 10px blue,
+    0 0 20px blue,
+    0 0 30px blue,
+    0 0 40px blue,
+    0 0 50px blue
+    ;
+}
+a.hover3 i{
+    text-shadow: 0 0 10px yellow,
+    0 0 20px yellow,
+    0 0 30px yellow,
+    0 0 40px yellow,
+    0 0 50px yellow
+    ;
+}
+.BACKVID
+{
+    position: fixed;
+    object-fit: cover;
+    height:100%;
+    width: 100%;
+    z-index: -1;
+}
+@keyframes zooming{
+    0%{transform: scale(0.5);}
+    100%{transform: scale(1);}
+   
+}
+.img{
+    z-index: 51;
+}
+.modal{
+
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: none;
+        justify-content: center;
+        align-items:center;
+        border-radius: 70%;
+}
+.modal-content{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:none;
+    display: flex;
+    justify-items:center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+

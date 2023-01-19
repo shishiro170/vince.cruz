@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>GCDC</title> 
+    <link rel="icon"   type="image/x-icon" href="C:\Users\Vince\CALOY\GRANDCHASE\favicon.ico">
+    <style>
+        * 
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container
+        {
+            min-height: 100px;
+            max-width: 1000px;
+            display: block;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .BACKVID
+        {
+            position: fixed;
+            object-fit: cover;
+            height:100vh;
+            width: 100vw;
+            z-index: -1;
+        }
+        body
+        {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        .logo
+        {
+            display: block;
+            width: 500px;
+           margin-left: auto;
+           margin-right: auto;
+
+        }
+        a{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 60px;
+            background: none;
+            border-radius: 50%;
+            font-size: 30px;
+            color: black;
+            transition: .5s;
+            align-items: center;
+
+
+        }
+        a:before{
+            content: '';
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            width: 30%;
+            height: 30%;
+            border-radius: 100%;
+            background: none;
+            transition: .5s;
+            transform: scale(.9);
+            z-index: -1;
+        }
+        a:hover:before{
+            transform: scale(1.2);
+            box-shadow:0 0 50px orangered,
+            0 0 100px orangered,
+            0 0 150px orangered,
+            0 0 200px orangered,
+            0 0 250px orangered,
+            0 0 300px orangered
+            ;
+            filter: blur(3px);
+            background: orangered;
+        }
+        a img:hover{
+            width: 70%;
+            bottom: 50%;
+            transition: .5s;
+        }
+        a img::after{
+            zoom: 100%;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container"> 
+        <video autoplay muted loop class="BACKVID">
+        <source src="C:\Users\Vince\CALOY\GRANDCHASE\Y2Mate.is - GrandChase-Dimensional Chaser Trailer-9811DglJdSY-720p-1654667730463.mp4" type="video/mp4">
+        BROWSER does not support HTML5 video
+        </video>
+    </div> 
+     <a href="C:\Users\Vince\CALOY\GRANDCHASE\HOME.html" >
+        <img src="C:\Users\Vince\CALOY\GRANDCHASE\GCLOGO-removebg-preview.png" alt="hehe">
+    </a>
+</body>
+</html>
